@@ -1,0 +1,13 @@
+{
+    "name": "Weather App",
+    "display": "standalone",
+    "bacground_color": "#fff",
+    "icons": [
+        {
+            "src": "/icons/Weather-icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+
+}
