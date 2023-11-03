@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,16 +10,310 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <div class="askCity hidden">
+    <div class="askCity hidden" id="askCity">
         <div class="search-panel">
-            <input class="city-name-input" id="cityRequestName" type="text" placeholder="choose..."/>
+            <input class="city-name-input" id="cityRequestName" type="text" placeholder="choose..." />
             <input type="button" value="Search" id="city-search-button">
         </div>
         <div class="city-list">
             <span class="city-item">City name</span>
         </div>
     </div>
-    <script src="/js/script.js"></script>
+    <div class="weatherWrapper">
+        <div class="currentWeather">
+            <div class="currentWeatherHeader">
+
+                <div class="currentWeatherInfo">
+
+                    <div class="currentTemperature">
+
+                    </div>
+
+                    <div class="currentConditionText">
+
+                    </div>
+                    <div class="weatherCityName">
+
+                    </div>
+                    <div class="temperatureFeelslike">
+
+                    </div>
+                </div>
+                <div class="currentConditionIcon">
+                    <img class="currentConditionIconImg" src="" alt="">
+                </div>
+            </div>
+            <div class="currentWeatherFooter">
+                <div class="horizontalScrolling">
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem0">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt="" ></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem1">
+                       <div class="dayForecastHour"></div>
+                       <img class="dayForecastConditionIcon" src="" alt=""></img>
+                       <div class="dayForecastTemperature"></div>
+                       <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem2">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem3">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem4">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem5">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem6">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem7">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem8">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem9">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem10">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem11">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem12">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem13">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem14">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem15">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem16">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem17">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem18">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem19">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem20">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem21">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem22">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    <div class="horizontalScrollingItem" id="horizontalScrollingItem23">
+                        <div class="dayForecastHour"></div>
+                        <img class="dayForecastConditionIcon" src="" alt=""></img>
+                        <div class="dayForecastTemperature"></div>
+                        <div class="dayForecastHumidity"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="forecastWeather">
+          <div class="forecastWeatherMain">
+
+              <div class="forecastDay" id="forecastDay0">
+                  <div class="forecastDate">
+                      
+                </div>
+                <div class="forecastHumidity">
+                    
+                </div>
+                <img class="forecastConditionIcon" src="" alt="" width="30">
+                
+            </img>
+                <div class="forecastMaxMinTemperature">
+
+                </div>
+            </div>
+            <div class="forecastDay" id="forecastDay1">
+                <div class="forecastDate">
+                    
+                </div>
+                <div class="forecastHumidity">
+                    
+                </div>
+                <img class="forecastConditionIcon" src="" alt="" width="30">
+                
+            </img>
+            <div class="forecastMaxMinTemperature">
+                
+            </div>
+        </div>
+        <div class="forecastDay" id="forecastDay2">
+            <div class="forecastDate">
+                
+            </div>
+            <div class="forecastHumidity">
+                
+            </div>
+            <img class="forecastConditionIcon" src="" alt="" width="30">
+            
+            </img>
+            <div class="forecastMaxMinTemperature">
+                
+            </div>
+        </div>
+        <div class="forecastDay" id="forecastDay3">
+            <div class="forecastDate">
+                
+            </div>
+            <div class="forecastHumidity">
+                
+            </div>
+            <img class="forecastConditionIcon" src="" alt="" width="30">
+            
+        </img>
+        <div class="forecastMaxMinTemperature">
+            
+        </div>
+    </div>
+    <div class="forecastDay" id="forecastDay4">
+        <div class="forecastDate">
+            
+        </div>
+        <div class="forecastHumidity">
+            
+        </div>
+        <img class="forecastConditionIcon" src="" alt="" width="30">
+        
+    </img>
+    <div class="forecastMaxMinTemperature">
+        
+                </div>
+            </div>
+            <div class="forecastDay" id="forecastDay5">
+                <div class="forecastDate">
+                    
+                </div>
+                <div class="forecastHumidity">
+                    
+                </div>
+                <img class="forecastConditionIcon" src="" alt="" width="30">
+                
+            </img>
+            <div class="forecastMaxMinTemperature">
+                
+            </div>
+        </div>
+        <div class="forecastDay" id="forecastDay6">
+                <div class="forecastDate">
+                    
+                </div>
+                <div class="forecastHumidity">
+                    
+                </div>
+                <img class="forecastConditionIcon" src="" alt="" width="30">
+                
+            </img>
+            <div class="forecastMaxMinTemperature">
+                
+            </div>
+        </div>
+    </div>
+    <div class="dayForecastUV">
+
+    </div>
+    <div class="dayForecastAverageHumidity">
+
+    </div>
+    <div class="dayForecastMaxWind">
+
+    </div>
+    <div class="dayForecastAstro">
+        <div class="dayForecastSunrise"></div>
+        <div class="dayForecastSunset"></div>
+    </div>
+        
+    </div>
+</div>
+<script src="/js/script.js"></script>
 </body>
+
 </html>

@@ -21,4 +21,93 @@
 }
 .city-list{
     margin-top: 10px;
+    align-items: center;
+}
+.city-item{
+    cursor: pointer;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border: rgb(203, 198, 198) solid 0.5px;
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+.city-item:hover{
+    background-color: rgb(220, 220, 220);
+    transition: 200ms;
+    
+}
+.hidden{
+    display: none;
+    overflow: hidden;
+}
+.currentWeatherHeader{
+
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+}
+.horizontalScrolling{
+ 
+    border: 1px solid rgb(152, 152, 152);
+    max-height: 200px ;
+    display: flex;
+    overflow-x: auto;
+
+}
+.horizontalScrolling .horizontalScrollingItem{
+    padding-top: 5px;
+    height: 120px;
+    min-width: 50px;
+    text-align: center;
+    padding-bottom: 5px;
+    
+}
+.horizontalScrolling::-webkit-scrollbar{
+    width: 0;
+}
+.dayForecastHumidity{
+    margin-top: 5px;
+}
+.forecastDay{
+    display: flex;
+}
+.forecastWeather{
+    display: grid;
+    
+}
+.forecastMain{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.dayForecastUV{
+grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.dayForecastAverageHumidity{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.dayForecastMaxWind{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+.dayForecastAstro{
+    display: grid;
+    grid-column: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
 }
