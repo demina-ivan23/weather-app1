@@ -105,28 +105,40 @@ const getWeatherData = (object) => {
             text: data.current.condition.text,
             icon: data.current.condition.icon
           },
+          uv: data.current.uv,
           last_updated_epoch: data.current.last_updated_epoch,
           last_updated: data.current.last_updated,
           temp_c: data.current.temp_c,
           feelslike_c: data.current.feelslike_c,
           is_day: data.current.is_day,
-          wind_kph: data.current.wind_kph
+          wind_kph: data.current.wind_kph,
+          humidity: data.current.humidity
         },
-
+        
       }
       console.log(currentWeatherData.location.name)
-      document.querySelector('.currentTemperature').innerText = currentWeatherData.current.temp_c + "C";
-      document.querySelector('.currentConditionText').innerText = currentWeatherData.current.condition.text
-      document.querySelector('.weatherCityName').innerText = currentWeatherData.location.name
-      document.querySelector('.temperatureFeelslike').innerText = currentWeatherData.current.temp_c + "c, feels like " + currentWeatherData.current.feelslike_c + "c"
-      document.querySelector('.currentConditionIconImg').src = currentWeatherData.current.condition.icon
-      let forecast = [];
+      function removeSubstring(inputString, substringToRemove) {
+        // Use the replace method to replace the substring with an empty string
+        const modifiedString = inputString.replace(substringToRemove, '');
+        
+        return modifiedString;
+      }
       function getDayOfWeekFromDate(dateString) {
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const date = new Date(dateString);
         const dayOfWeek = date.getDay(); // 0 for Sunday, 1 for Monday, etc.
         return daysOfWeek[dayOfWeek];
       }
+      document.querySelector('.currentTemperature').innerText = currentWeatherData.current.temp_c + "C";
+      document.querySelector('.currentConditionText').innerText = currentWeatherData.current.condition.text
+      document.querySelector('.weatherCityName').innerText = currentWeatherData.location.name
+      document.querySelector('.temperatureFeelslike').innerText = currentWeatherData.current.temp_c + "c, feels like " + currentWeatherData.current.feelslike_c + "c";
+      document.querySelector('.currentDayOfWeek').innerText = getDayOfWeekFromDate(currentWeatherData.current.last_updated); 
+      document.querySelector('.currentConditionIconImg').src = currentWeatherData.current.condition.icon;
+      document.querySelector('.currentHumidity').innerText = "Currenr humidity: " + currentWeatherData.current.humidity + "%";
+      document.querySelector('.currentUV').innerText = "Current UV: " + currentWeatherData.current.uv;
+      document.querySelector('.currentWindspeed').innerText = "Current windspeed: " + currentWeatherData.current.wind_kph + " kph";
+      let forecast = [];
       for (let i = 0; i < 7; i++) {
         forecast[i] = data.forecast.forecastday[i]
         console.log(forecast[i].date);
@@ -137,21 +149,15 @@ const getWeatherData = (object) => {
 
           document.querySelector('#forecastDay' + i + ' .forecastDate').innerText = getDayOfWeekFromDate(forecast[i].date);
         }
-        document.querySelector('#forecastDay' + i + ' .forecastHumidity').innerText = forecast[i].day.avghumidity + '%';
+        document.querySelector('#forecastDay' + i + ' .forecastHumidity').innerText = " " + forecast[i].day.avghumidity + '%';
         document.querySelector('#forecastDay' + i + ' .forecastConditionIcon').src = forecast[i].day.condition.icon;
-        document.querySelector('#forecastDay' + i + ' .forecastMaxMinTemperature').innerText = forecast[i].day.maxtemp_c + 'C ' + forecast[i].day.mintemp_c + 'C ';
+        document.querySelector('#forecastDay' + i + ' .forecastMaxMinTemperature').innerText = forecast[i].day.maxtemp_c + 'C/ ' + forecast[i].day.mintemp_c + 'C ';
       }
-      function removeSubstring(inputString, substringToRemove) {
-        // Use the replace method to replace the substring with an empty string
-        const modifiedString = inputString.replace(substringToRemove, '');
-        
-        return modifiedString;
-      }
-      document.querySelector('.dayForecastUV').innerText = "UV: " + forecast[0].day.uv;
-      document.querySelector('.dayForecastAverageHumidity').innerText = forecast[0].day.avghumidity + '%';
-      document.querySelector('.dayForecastMaxWind').innerText = forecast[0].day.maxwind_kph + " kph";
-      document.querySelector('.dayForecastSunrise').innerText = 'Sunrise: ' + forecast[0].astro.sunrise;
-      document.querySelector('.dayForecastSunset').innerText =  'Sunset: ' + forecast[0].astro.sunset;
+      document.querySelector('.dayForecastUV').innerText = "Avg. UV: " + forecast[0].day.uv;
+      document.querySelector('.dayForecastAverageHumidity').innerText = "Avg. humidity: " + forecast[0].day.avghumidity + '%';
+      document.querySelector('.dayForecastMaxWind').innerText = "Max wind: " + forecast[0].day.maxwind_kph + " kph";
+      document.querySelector('.dayForecastSunrise').innerText = 'Sunrise at ' + forecast[0].astro.sunrise;
+      document.querySelector('.dayForecastSunset').innerText =  'Sunset at ' + forecast[0].astro.sunset;
       for (let i = 0; i < 24; i++) {
         document.querySelector('#horizontalScrollingItem' + i + ' .dayForecastHour').innerText = removeSubstring(forecast[0].hour[i].time, forecast[0].date)
         document.querySelector('#horizontalScrollingItem' + i + ' .dayForecastConditionIcon').src = forecast[0].hour[i].condition.icon;

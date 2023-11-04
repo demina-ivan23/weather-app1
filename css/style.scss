@@ -42,17 +42,67 @@
     display: none;
     overflow: hidden;
 }
+ body {
+    background-color: rgb(245, 245, 245);
+}
 .currentWeatherHeader{
 
-    display: flex;
+    display: grid;
+    grid-template-columns: 6;
     margin-bottom: 10px;
     margin-left: 10px;
     margin-right: 10px;
     
 }
+.currentWeatherInfo{
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.currentTemperature{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+}
+.currentConditionText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+
+}
+.weatherCityName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+
+}
+.temperatureFeelslike{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+
+}
+.currentDayOfWeek{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+
+}
+.currentConditionIcon{
+    grid-column-start: 5 ;
+    grid-column-end: 6;
+display: flex;
+align-items: center;
+justify-content: center;
+}
 .horizontalScrolling{
  
-    border: 1px solid rgb(152, 152, 152);
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
     max-height: 200px ;
     display: flex;
     overflow-x: auto;
@@ -77,37 +127,139 @@
 }
 .forecastWeather{
     display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 5 columns of equal size */
+    grid-template-rows: repeat(2, 1fr); /* 2 rows of equal size */
+    grid-gap: 5px; /* Adjust the gap as needed */
+    padding-top: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
     
+   
 }
-.forecastMain{
+.forecastWeatherMain{
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
+  background-color: rgb(240, 240, 240);
+  border-radius: 7px;
+  padding: 2px;
+}
+.forecastDay{
+    padding-bottom: 5px;
+}
+.forecastMaxMinTemperature{
+    font-size: 0.8rem;
+}
+.forecastDate{
+font-size: 0.9rem;
+}
+.forecastHumidity{
+    font-size: 0.8rem;
+    padding-left: 5px;
 }
 .dayForecastUV{
-grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
-}
-.dayForecastAverageHumidity{
-  grid-column-start: 3;
+grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
+  border-radius: 7px;
+  background-color: rgb(227, 125, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dayForecastAverageHumidity{
+  grid-column-start: 4;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(175, 255, 113);
+  text-align: center;
 }
 .dayForecastMaxWind{
-  grid-column-start: 2;
-  grid-column-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 2;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(234, 144, 144);
+  text-align: center;
 }
 .dayForecastAstro{
     display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 rows of equal size */
+    grid-gap: 5px; 
     grid-column: 2;
-    grid-column-start: 3;
-    grid-column-end: 4;
+    grid-column-start: 4;
+    grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 2;
+    background-color: rgb(255, 200, 111);
+    border-radius: 7px;
+    
+}
+.dayForecastSunrise{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5px;
+    text-align: center;
+}
+.dayForecastSunset{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5px;
+    text-align: center;
+}
+.weatherFooter{
+    margin-top: 20px;
+    display: grid;
+    grid-template-rows: repeat(3, 2fr);
+}
+.currentWindspeed{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    padding: 20px ;
+    background-color: rgb(211, 226, 239);
+    border-radius: 7px;
+    margin-bottom: 5px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+}
+.currentUV{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: rgb(86, 254, 217);
+    border-radius: 7px;
+    margin-bottom: 5px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ 
+}
+.currentHumidity{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: rgb(255, 141, 141);
+    border-radius: 7px;
+    margin-bottom: 5px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ 
 }
