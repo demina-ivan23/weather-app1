@@ -38,15 +38,11 @@
     transition: 200ms;
     
 }
-.hidden{
-    display: none;
-    overflow: hidden;
-}
- body {
+body {
     background-color: rgb(245, 245, 245);
 }
 .currentWeatherHeader{
-
+    
     display: grid;
     grid-template-columns: 6;
     margin-bottom: 10px;
@@ -69,44 +65,44 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 5px;
-
+    
 }
 .weatherCityName{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 5px;
-
+    
 }
 .temperatureFeelslike{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 5px;
-
+    
 }
 .currentDayOfWeek{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 5px;
-
+    
 }
 .currentConditionIcon{
     grid-column-start: 5 ;
     grid-column-end: 6;
-display: flex;
-align-items: center;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .horizontalScrolling{
- 
+    
     background-color: rgb(240, 240, 240);
     border-radius: 5px;
     max-height: 200px ;
     display: flex;
     overflow-x: auto;
-
+    
 }
 .horizontalScrolling .horizontalScrollingItem{
     padding-top: 5px;
@@ -134,16 +130,16 @@ justify-content: center;
     padding-right: 5px;
     padding-left: 5px;
     
-   
+    
 }
 .forecastWeatherMain{
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-  background-color: rgb(240, 240, 240);
-  border-radius: 7px;
-  padding: 2px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: rgb(240, 240, 240);
+    border-radius: 7px;
+    padding: 2px;
 }
 .forecastDay{
     padding-bottom: 5px;
@@ -152,17 +148,17 @@ justify-content: center;
     font-size: 0.8rem;
 }
 .forecastDate{
-font-size: 0.9rem;
+    font-size: 0.9rem;
 }
 .forecastHumidity{
     font-size: 0.8rem;
     padding-left: 5px;
 }
 .dayForecastUV{
-grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
   border-radius: 7px;
   background-color: rgb(227, 125, 255);
   display: flex;
@@ -170,8 +166,8 @@ grid-column-start: 3;
   justify-content: center;
 }
 .dayForecastAverageHumidity{
-  grid-column-start: 4;
-  grid-column-end: 5;
+    grid-column-start: 4;
+    grid-column-end: 5;
   grid-row-start: 1;
   grid-row-end: 2;
   border-radius: 7px;
@@ -182,16 +178,16 @@ grid-column-start: 3;
   text-align: center;
 }
 .dayForecastMaxWind{
-  grid-column-start: 3;
-  grid-column-end: 4;
-  grid-row-start: 2;
-  grid-row-end: 2;
-  border-radius: 7px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(234, 144, 144);
-  text-align: center;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(234, 144, 144);
+    text-align: center;
 }
 .dayForecastAstro{
     display: grid;
@@ -216,6 +212,7 @@ grid-column-start: 3;
     text-align: center;
 }
 .dayForecastSunset{
+    
     grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
@@ -262,4 +259,36 @@ grid-column-start: 3;
  align-items: center;
  justify-content: center;
  
+}
+.requestApiKey{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+background-color: aliceblue;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+.apiKeyInput{
+border-radius: 7px;
+width: 80%;
+margin-bottom: 10px;
+padding: 5px;
+}
+.apiKeySubmit{
+background-color: #6d9df8;
+border-radius: 7px;
+padding: 2px 5px;
+color: #fff;
+}
+.informAboutApiSite{
+margin-top: 10px;
+text-align: center;
+}
+.hidden{
+    display: none;
+    overflow: hidden;
 }

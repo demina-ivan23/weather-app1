@@ -40,11 +40,6 @@
   transition: 200ms;
 }
 
-.hidden {
-  display: none;
-  overflow: hidden;
-}
-
 body {
   background-color: rgb(245, 245, 245);
 }
@@ -279,4 +274,41 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.requestApiKey {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.apiKeyInput {
+  border-radius: 7px;
+  width: 80%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.apiKeySubmit {
+  background-color: #6d9df8;
+  border-radius: 7px;
+  padding: 2px 5px;
+  color: #fff;
+}
+
+.informAboutApiSite {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+  overflow: hidden;
 }/*# sourceMappingURL=style.css.map */
