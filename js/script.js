@@ -1,6 +1,6 @@
+"7dd0cd7a02bf44ed937131143232910"
 let weater = {
-  apiKey: "7dd0cd7a02bf44ed937131143232910",
-  request: "http://api.weatherapi.com/v1/current.json?key=7dd0cd7a02bf44ed937131143232910&q=Paris"
+  apiKey: window.localStorage.getItem('apiKey')
 }
 const fetchCity = (request) => {
   const ukrainianCities = [
@@ -170,7 +170,25 @@ const getWeatherData = (object) => {
       console.error('Error:', error);
     });
 }
+const getApiKey = () => {
+  document.querySelector('.apiKeySubmit').addEventListener('click', () => {
+    let apiKeyInput = document.querySelector('.apiKeyInput').value
+    apiKeyInput = apiKeyInput.trim();
+    if (apiKeyInput === ''){
+    alert('Please type your api key into the input field');
+    }
+    else{
+      window.localStorage.setItem('apiKey', apiKeyInput)
+      location.reload();
+    }
+  })
+  let apiKey = window.localStorage.getItem('apiKey');
+  if(apiKey === null){
+    document.querySelector('.requestApiKey').classList.remove('hidden');
+  }
+}
 (() => {
+  getApiKey();
   getCity();
   let city = JSON.parse(window.localStorage.getItem("city"));
   window.setInterval(getWeatherData(city), 300000);
