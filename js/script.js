@@ -52,6 +52,7 @@ const fillCityList = (list) => {
 
 
       window.localStorage.setItem('city', JSON.stringify(item));
+      location.reload();
     })
     listContainer.appendChild(newCityItem);
   }
@@ -67,16 +68,6 @@ const searchForCity = () => {
   })
 }
 
-const getCity = () => {
-  let city = window.localStorage.getItem("city");
-  console.log(JSON.parse(city))
-  if (city === null) {
-    console.log('city is null')
-    document.getElementById('askCity').classList.remove('hidden');
-    console.log(document.getElementById('askCity'))
-    searchForCity();
-  }
-}
 
 const getWeatherData = (object) => {
 
@@ -129,6 +120,39 @@ const getWeatherData = (object) => {
         const dayOfWeek = date.getDay(); // 0 for Sunday, 1 for Monday, etc.
         return daysOfWeek[dayOfWeek];
       }
+      function setBackgroundColor(){
+        if(currentWeatherData.current.condition.text === 'Partly cloudy' & currentWeatherData.current.is_day == '1');{
+
+          document.querySelector('body').classList.add('partlyCloudyDay');
+        } 
+        if(currentWeatherData.current.condition.text === 'Overcast' & currentWeatherData.current.is_day == '1' )
+        {
+          document.querySelector('body').classList.add('overcastDay')
+        }
+        if(currentWeatherData.current.condition.text === 'Cloudy' && currentWeatherData.current.is_day == '1'){
+          document.querySelector('body').classList.add('cloudyDay')
+        }
+        if(currentWeatherData.current.condition.text === 'Clear' && currentWeatherData.current.is_day == '1'){
+          document.querySelector('body').classList.add('clearDay');
+        }
+        if(currentWeatherData.current.condition.text === 'Partly cloudy' && currentWeatherData.current.is_day == '0'){
+          
+          document.querySelector('body').classList.add('cloudyNight');
+        } 
+        if(currentWeatherData.current.condition.text === 'Cloudy'  && currentWeatherData.current.is_day == '0' || currentWeatherData.current.condition.text === 'Overcast'  & currentWeatherData.current.is_day === '0'){
+          document.querySelector('body').classList.add('cloudyNight');
+        }
+        if(currentWeatherData.current.condition.text === 'Clear' && currentWeatherData.current.is_day == '0'){
+          document.querySelector('body').classList.add('clearNight');
+        }
+        if(currentWeatherData.current.condition.text === 'Patchy rain possible' && currentWeatherData.current.is_day == '0'){
+          document.querySelector('body').classList.add('cloudyNight');
+        }
+        if(currentWeatherData.current.condition.text === 'Patchy rain possible' && currentWeatherData.current.is_day == '1'){
+          document.querySelector('body').classList.add('overcastDay');
+        }
+      }
+      setBackgroundColor();
       document.querySelector('.currentTemperature').innerText = currentWeatherData.current.temp_c + "C";
       document.querySelector('.currentConditionText').innerText = currentWeatherData.current.condition.text
       document.querySelector('.weatherCityName').innerText = currentWeatherData.location.name
@@ -146,7 +170,7 @@ const getWeatherData = (object) => {
           document.querySelector('#forecastDay' + i + ' .forecastDate').innerText = 'Today';
         }
         else{
-
+          
           document.querySelector('#forecastDay' + i + ' .forecastDate').innerText = getDayOfWeekFromDate(forecast[i].date);
         }
         document.querySelector('#forecastDay' + i + ' .forecastHumidity').innerText = " " + forecast[i].day.avghumidity + '%';
@@ -169,23 +193,33 @@ const getWeatherData = (object) => {
     .catch(error => {
       console.error('Error:', error);
     });
-}
-const getApiKey = () => {
-  document.querySelector('.apiKeySubmit').addEventListener('click', () => {
-    let apiKeyInput = document.querySelector('.apiKeyInput').value
-    apiKeyInput = apiKeyInput.trim();
-    if (apiKeyInput === ''){
-    alert('Please type your api key into the input field');
-    }
-    else{
-      window.localStorage.setItem('apiKey', apiKeyInput)
-      location.reload();
-    }
-  })
-  let apiKey = window.localStorage.getItem('apiKey');
-  if(apiKey === null){
-    document.querySelector('.requestApiKey').classList.remove('hidden');
   }
+  const getApiKey = () => {
+    document.querySelector('.apiKeySubmit').addEventListener('click', () => {
+      let apiKeyInput = document.querySelector('.apiKeyInput').value
+      apiKeyInput = apiKeyInput.trim();
+      if (apiKeyInput === ''){
+        alert('Please type your api key into the input field');
+      }
+      else{
+        window.localStorage.setItem('apiKey', apiKeyInput)
+        location.reload();
+      }
+    })
+  }
+  const getCity = () => {
+    let city = window.localStorage.getItem("city");
+    console.log(JSON.parse(city))
+    if (city === null) {
+      console.log('city is null')
+      document.getElementById('askCity').classList.remove('hidden');
+      console.log(document.getElementById('askCity'))
+      searchForCity();
+    }
+  }
+  let apiKey = window.localStorage.getItem('apiKey');
+if(apiKey === null){
+  document.querySelector('.requestApiKey').classList.remove('hidden');
 }
 (() => {
   getApiKey();

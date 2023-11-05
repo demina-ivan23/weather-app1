@@ -1,3 +1,7 @@
+:root {
+  --tiles-bacground-color: #a167a5b0 ;
+}
+
 .askCity {
   position: absolute;
   top: 0;
@@ -53,6 +57,7 @@ body {
 }
 
 .currentWeatherInfo {
+  color: #fff;
   grid-column-start: 1;
   grid-column-end: 2;
 }
@@ -101,7 +106,7 @@ body {
 }
 
 .horizontalScrolling {
-  background-color: rgb(240, 240, 240);
+  background-color: var(--tiles-bacground-color);
   border-radius: 5px;
   max-height: 200px;
   display: flex;
@@ -139,11 +144,11 @@ body {
 }
 
 .forecastWeatherMain {
+  background-color: var(--tiles-bacground-color);
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  background-color: rgb(240, 240, 240);
   border-radius: 7px;
   padding: 2px;
 }
@@ -171,7 +176,7 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   border-radius: 7px;
-  background-color: rgb(227, 125, 255);
+  background-color: var(--tiles-bacground-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +191,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(175, 255, 113);
+  background-color: var(--tiles-bacground-color);
   text-align: center;
 }
 
@@ -199,7 +204,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(234, 144, 144);
+  background-color: var(--tiles-bacground-color);
   text-align: center;
 }
 
@@ -212,7 +217,7 @@ body {
   grid-column-end: 5;
   grid-row-start: 2;
   grid-row-end: 2;
-  background-color: rgb(255, 200, 111);
+  background-color: var(--tiles-bacground-color);
   border-radius: 7px;
 }
 
@@ -246,7 +251,7 @@ body {
   grid-row-start: 1;
   grid-row-end: 2;
   padding: 20px;
-  background-color: rgb(211, 226, 239);
+  background-color: var(--tiles-bacground-color);
   border-radius: 7px;
   margin-bottom: 5px;
   display: flex;
@@ -257,7 +262,7 @@ body {
 .currentUV {
   grid-row-start: 2;
   grid-row-end: 3;
-  background-color: rgb(86, 254, 217);
+  background-color: var(--tiles-bacground-color);
   border-radius: 7px;
   margin-bottom: 5px;
   display: flex;
@@ -268,7 +273,7 @@ body {
 .currentHumidity {
   grid-row-start: 3;
   grid-row-end: 4;
-  background-color: rgb(255, 141, 141);
+  background-color: var(--tiles-bacground-color);
   border-radius: 7px;
   margin-bottom: 5px;
   display: flex;
@@ -311,4 +316,34 @@ body {
 .hidden {
   display: none;
   overflow: hidden;
+}
+
+.partlyCloudyDay {
+  height: 100vh;
+  background: url("/images/partly-cloudy-weather.jpg") no-repeat center center/cover;
+}
+
+.cloudyDay {
+  height: 100vh;
+  background: url("/images/cloudy-sky.jpg") no-repeat center center/cover;
+}
+
+.clearDay {
+  height: 100vh;
+  background: url("/images/clear-sky.webp") no-repeat center center/cover;
+}
+
+.cloudyNight {
+  height: 100vh;
+  background: url("/images/cloudy-night-sky.jpg") no-repeat center center/cover;
+}
+
+.clearNight {
+  height: 100vh;
+  background: url("/images/clear-night-sky.avif") no-repeat center center/cover;
+}
+
+.overcastDay {
+  height: 100vh;
+  background: url("/images/overcast-sky.avif") no-repeat center center/cover;
 }/*# sourceMappingURL=style.css.map */
