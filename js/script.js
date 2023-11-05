@@ -191,6 +191,6 @@ const getApiKey = () => {
   getApiKey();
   getCity();
   let city = JSON.parse(window.localStorage.getItem("city"));
-  window.setInterval(getWeatherData(city), 300000);
+  window.setInterval(getWeatherData(city), 300000); 
 })()
 
