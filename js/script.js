@@ -46,12 +46,26 @@ const fetchCity = (request) => {
 
   return matchingItems;
 }
+const addColor = (number) => {
+  switch(number){
+    case 1:
+      return 'city-color-1';
+    case 2:
+      return 'city-color-2';
+    case 3:
+      return 'city-color-3';
+    case 4:
+      return 'city-color-4';
+    case 5:
+      return 'city-color-5';
+  }
+}
 const fillCityList = (list) => {
   const listContainer = document.getElementsByClassName('city-list')[0]
   listContainer.innerHTML = ""
   for (let item of list) {
     const newCityItem = document.createElement("div");
-    newCityItem.classList = "city-item"
+    newCityItem.classList = 'city-item ' + addColor(Math.floor(Math.random() * 5) + 1);
     newCityItem.innerText = item.name
 
     newCityItem.addEventListener('click', () => {

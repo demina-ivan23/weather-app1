@@ -1,7 +1,11 @@
 :root{
     --tiles-bacground-color: #22577aa9 ;
-    --city-color: #00A1E4;
-     
+    --city-color-1: #FF595E;
+    --city-color-2: #FFCA3A;
+    --city-color-3: #8AC926;
+    --city-color-4: #1982C4;
+    --city-color-5: #6A4C93;
+
 }
 .askCity{
     position: absolute;
@@ -29,7 +33,7 @@
     padding: 5px;
 }
 .city-list{
-    margin-top: 10px;
+    margin-top: 30px;
     align-items: center;
 }
 #citySearchButton{
@@ -47,13 +51,28 @@
     margin-bottom: 10px;
     padding-left: 100px;
     padding-right: 100px;
-    background-color: var(--city-color);
     border-radius: 5px;
     padding-top: 5px;
+   
     
 }
-   
+.city-color-1{
+background-color: var(--city-color-1);
+}
+.city-color-2{
+    background-color: var(--city-color-2);
+}
+.city-color-3{
+    background-color: var(--city-color-3);
+}
+.city-color-4{
+    background-color: var(--city-color-4);
 
+}
+.city-color-5{
+    background-color: var(--city-color-5);
+    
+}
 body {
 color: #fff;
 }
