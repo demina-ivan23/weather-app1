@@ -380,12 +380,12 @@ body {
 
 .overcastDay {
   height: 100vh;
-  background: url("/images/overcast-sky.avif") no-repeat center center/cover;
+  background: url("images/overcast-sky.avif") no-repeat center center/cover;
 }
 
 .sunnyDay {
   height: 100vh;
-  background: url("/images/sunny-weather.webp") no-repeat center center/cover;
+  background: url("images/sunny-weather.webp") no-repeat center center/cover;
 }
 
 .chooseAnotherCity {
