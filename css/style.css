@@ -1,5 +1,6 @@
 :root {
-  --tiles-bacground-color: #a167a5b0 ;
+  --tiles-bacground-color: #22577aa9 ;
+  --city-color: #00A1E4;
 }
 
 .askCity {
@@ -22,6 +23,9 @@
 
 .city-name-input {
   flex-grow: 3;
+  outline: none;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .city-list {
@@ -29,23 +33,29 @@
   align-items: center;
 }
 
+#citySearchButton {
+  border: #4c89fb;
+  background-color: #4c89fb;
+  color: #fff;
+  padding: 5px 10px;
+  margin-left: 2px;
+  border-radius: 5px;
+}
+
 .city-item {
   cursor: pointer;
   padding-bottom: 5px;
   font-size: 1.5em;
   margin-bottom: 10px;
-  border: rgb(203, 198, 198) solid 0.5px;
   padding-left: 100px;
   padding-right: 100px;
-}
-
-.city-item:hover {
-  background-color: rgb(220, 220, 220);
-  transition: 200ms;
+  background-color: var(--city-color);
+  border-radius: 5px;
+  padding-top: 5px;
 }
 
 body {
-  background-color: rgb(245, 245, 245);
+  color: #fff;
 }
 
 .currentWeatherHeader {
@@ -299,12 +309,14 @@ body {
   width: 80%;
   margin-bottom: 10px;
   padding: 5px;
+  outline: none;
 }
 
 .apiKeySubmit {
-  background-color: #6d9df8;
+  background-color: #4c89fb;
+  border: #4c89fb;
   border-radius: 7px;
-  padding: 2px 5px;
+  padding: 5px 10px;
   color: #fff;
 }
 
@@ -346,4 +358,33 @@ body {
 .overcastDay {
   height: 100vh;
   background: url("/images/overcast-sky.avif") no-repeat center center/cover;
+}
+
+.sunnyDay {
+  height: 100vh;
+  background: url("/images/sunny-weather.webp") no-repeat center center/cover;
+}
+
+.chooseAnotherCity {
+  background-color: rgba(76, 137, 251, 0.6901960784);
+  padding: 20px 35px;
+  border: rgba(76, 137, 251, 0.5921568627) 0.5px solid;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.useAnotherApi {
+  background-color: rgba(76, 137, 251, 0.6901960784);
+  padding: 20px 35px;
+  border: rgba(76, 137, 251, 0.5921568627) 0.5px solid;
+  border-radius: 5px;
+  color: #fff;
+  margin-left: 2px;
+}
+
+.anotherCityOrApiContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,12 @@
 "7dd0cd7a02bf44ed937131143232910"
+document.querySelector('.chooseAnotherCity').addEventListener('click', () => {
+  window.localStorage.removeItem('city');
+  location.reload();
+}) 
+document.querySelector('.useAnotherApi').addEventListener('click', () => {
+  window.localStorage.removeItem('apiKey');
+  location.reload();
+}) 
 let weater = {
   apiKey: window.localStorage.getItem('apiKey')
 }
@@ -59,7 +67,7 @@ const fillCityList = (list) => {
 }
 
 const searchForCity = () => {
-  const searchButton = document.getElementById('city-search-button')
+  const searchButton = document.getElementById('citySearchButton')
   const typedCity = document.getElementById("cityRequestName")
   searchButton.addEventListener('click', function () {
     console.log('searching began')
@@ -151,6 +159,10 @@ const getWeatherData = (object) => {
         if(currentWeatherData.current.condition.text === 'Patchy rain possible' && currentWeatherData.current.is_day == '1'){
           document.querySelector('body').classList.add('overcastDay');
         }
+        if(currentWeatherData.current.condition.text === 'Sunny' && currentWeatherData.current.is_day == '1')
+        {
+          document.querySelector('body').classList.add('sunnyDay');
+        }
       }
       setBackgroundColor();
       document.querySelector('.currentTemperature').innerText = currentWeatherData.current.temp_c + "C";
@@ -213,6 +225,7 @@ const getWeatherData = (object) => {
     if (city === null) {
       console.log('city is null')
       document.getElementById('askCity').classList.remove('hidden');
+      document.querySelector('.weatherWrapper').classList.add('hidden');
       console.log(document.getElementById('askCity'))
       searchForCity();
     }
