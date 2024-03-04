@@ -1,4 +1,4 @@
-"7dd0cd7a02bf44ed937131143232910"
+
 document.querySelector('.chooseAnotherCity').addEventListener('click', () => {
   window.localStorage.removeItem('city');
   location.reload();
