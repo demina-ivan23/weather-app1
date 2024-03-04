@@ -334,34 +334,34 @@ text-align: center;
 }
 .partlyCloudyDay{
     height: 100vh;
-    background: url('images/partly-cloudy-weather.jpg') no-repeat center center/cover ;
+    background: url('/images/partly-cloudy-weather.jpg') no-repeat center center/cover ;
 }
 .cloudyDay{
     height: 100vh;
-    background: url('images/cloudy-sky.jpg') no-repeat center center/cover ;
+    background: url('/images/cloudy-sky.jpg') no-repeat center center/cover ;
 }
 .clearDay{
     height: 100vh;
-    background: url('images/clear-sky.webp') no-repeat center center/cover ;
+    background: url('/images/clear-sky.webp') no-repeat center center/cover ;
     
 }
 .cloudyNight{
     height: 100vh;
-    background: url('images/cloudy-night-sky.jpg') no-repeat center center/cover ;
+    background: url('/images/cloudy-night-sky.jpg') no-repeat center center/cover ;
     
 }
 .clearNight{
     height: 100vh;
-    background: url('images/clear-night-sky.avif') no-repeat center center/cover ;
+    background: url('/images/clear-night-sky.avif') no-repeat center center/cover ;
 }
 
 .overcastDay{
     height: 100vh;
-    background: url('images/overcast-sky.avif') no-repeat center center/cover ;
+    background: url('/images/overcast-sky.avif') no-repeat center center/cover ;
 }
 .sunnyDay{
     height: 100vh;
-    background: url('images/sunny-weather.webp') no-repeat center center/cover ;
+    background: url('/images/sunny-weather.webp') no-repeat center center/cover ;
 }
 .chooseAnotherCity{
     background-color: #4c89fbb0;
